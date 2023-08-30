@@ -1,3 +1,4 @@
+# https://atcoder.jp/contests/abc231/tasks/abc231_c
 import bisect
 
 # 入力の受け取り

@@ -1,3 +1,4 @@
+# https://atcoder.jp/contests/abc199/tasks/abc199_a
 from collections import deque
 
 # 入力受け取り

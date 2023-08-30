@@ -1,4 +1,5 @@
 # 二分探索Algorithm
+# https://atcoder.jp/contests/abc231/tasks/abc231_c
 
 # 入力の受け取り
 N, Q = map(int, input().split())
