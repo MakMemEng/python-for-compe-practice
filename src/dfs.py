@@ -31,7 +31,7 @@ def dfs(now: int, pre: int) -> None:
     ans.append(now)
     # to: 今いる町から行ける町
     for to in connect[now]:
-        # 前にいた町を違っていたら
+        # 前にいた町と違っていたら
         if to != pre:
             dfs(to, now)
             # 戻ってきたら答えへ格納
@@ -40,5 +40,18 @@ def dfs(now: int, pre: int) -> None:
 
 # 最初の町=1, 前にいた町=-1としてStart
 dfs(1, -1)
+# dfs(1, -1) now=1, pre=-1, to=2, ans=[1]
+# stack dfs(1, -1)
+# dfs(2, 1) now=2, pre=1, to=1, ans=[1,2]
+# dfs(2, 1) now=2, pre=1, to=4, ans=[1,2]
+# stack dfs(2, 1), dfs(1, -1)
+# dfs(4, 2) now=4, pre=2, to=2, ans=[1,2,4]
+# dfs(2, 1) now=2, pre=1, to=4, ans=[1,2,4,2]
+# dfs(1, -1) now=1, pre=-1, to=2, ans=[1,2,4,2,1]
+# dfs(1, -1) now=1, pre=-1, to=3, ans=[1,2,4,2,1]
+# stack dfs(1, -1)
+# dfs(3, 1) now=3, pre=1, to=1, ans=[1,2,4,2,1,3]
+# dfs(1, -1) now=1, pre=-1, to=3, ans=[1,2,4,2,1,3,1]
+
 
 print(*ans)
